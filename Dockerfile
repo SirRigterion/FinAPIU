@@ -2,8 +2,11 @@ FROM python:3.12-slim AS base
 WORKDIR /app
 
 # Устанавливаем netcat-openbsd и обновляем pip
-RUN apt-get update && apt-get install -y netcat-openbsd && \
+RUN apt-get update && \
+    apt-get install -y netcat-openbsd && \
+    rm -rf /var/lib/apt/lists/* && \
     pip install --no-cache-dir --upgrade pip
+
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt

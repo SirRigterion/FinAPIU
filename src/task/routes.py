@@ -277,6 +277,7 @@ async def get_shift_tasks(
     
     result = await db.execute(
         select(Task)
+        .options(selectinload(Task.assignee))
         .join(User, Task.assignee_id == User.user_id)
         .where(
             Task.is_deleted == False,
@@ -285,7 +286,8 @@ async def get_shift_tasks(
         )
         .order_by(Task.priority.desc(), Task.due_date.asc())
     )
-    return result.scalars().all()
+    tasks = result.scalars().all()
+    return tasks
 
 @router.patch("/{task_id}/reassign", response_model=TaskResponse)
 async def reassign_task(
