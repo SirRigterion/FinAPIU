@@ -1,0 +1,70 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.python-version
+
+# Virtual environment
+venv/
+.env/
+.venv/
+vnev/
+.vnev/
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker
+docker-compose.override.yml
+
+# Logs
+*.log
+logs/
+
+# Uploads
+uploads/
+!uploads/.gitkeep  # Если нужно сохранить пустую папку
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Alembic (если не хотите коммитить версии миграций)
+# alembic/versions/
+
+# macOS
+.DS_Store
+
+# Тестовые данные
+test_data/
+tmp/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+*.iml
+
+# VS Code
+.vscode/
